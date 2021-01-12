@@ -1,3 +1,4 @@
+import 'package:anythings/screens/contact_screen.dart';
 import 'package:anythings/screens/createnewlist.dart';
 import 'package:anythings/screens/options.dart';
 import 'package:anythings/screens/recievedlist.dart';
@@ -538,7 +539,13 @@ Widget tile(context) {
                     ListTile(
                       title: Text("Share"),
                       trailing: Icon(Icons.share),
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) {
+                            return ShareScreen();
+                          },
+                        ));
+                      },
                     ),
                     ListTile(
                       title: Text("Shared Details"),
@@ -551,13 +558,8 @@ Widget tile(context) {
                     //   onTap: () {},
                     // ),
                     ListTile(
-                      title: Text("Reply"),
-                      trailing: Icon(Icons.reply),
-                      onTap: () {},
-                    ),
-                    ListTile(
-                      title: Text("Forward"),
-                      trailing: Icon(Icons.forward),
+                      title: Text("Lock"),
+                      trailing: Icon(Icons.lock),
                       onTap: () {},
                     ),
                     ListTile(

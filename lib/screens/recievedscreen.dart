@@ -93,6 +93,14 @@ class _RecievedScreenState extends State<RecievedScreen> {
                     inactiveThumbColor: Colors.red,
                   )),
                   Spacer(),
+                  InkWell(
+                    onTap: () {},
+                    child: Center(
+                      child: Text("Status Change",
+                          style: TextStyle(fontWeight: FontWeight.bold)),
+                    ),
+                  ),
+                  Spacer(),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text("Visible",
@@ -112,7 +120,57 @@ class _RecievedScreenState extends State<RecievedScreen> {
                 ],
               ),
               buildTitle(context),
-              buildseries(context, Product(1, false), 0),
+              InkWell(
+                  onTap: () {
+                    print("yeah");
+                    showDialog(
+                      context: context,
+                      builder: (context) => Dialog(
+                        shape: RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.circular(20.0)), //this right here
+                        child: Container(
+                          height: 300.0,
+                          width: 300.0,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            border: Border.all(
+                                color: Colors.lightBlueAccent, width: 3),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: <Widget>[
+                              Text(
+                                "Comments",
+                                style: TextStyle(),
+                              ),
+                              Expanded(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: TextField(
+                                    minLines: 2,
+                                    maxLines: 10,
+                                    decoration: InputDecoration(
+                                        border: InputBorder.none),
+                                  ),
+                                ),
+                              ),
+                              Spacer(),
+                              RaisedButton(
+                                onPressed: () {},
+                                child: Text(
+                                  "OK",
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                color: Colors.lightBlueAccent,
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                  child: buildseries(context, Product(1, false), 0)),
               buildseries(context, Product(1, false), 0),
               buildseries(context, Product(1, false), 0),
             ],
