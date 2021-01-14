@@ -4,6 +4,8 @@ import 'package:anythings/global/modals.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:zoom_widget/zoom_widget.dart';
+import 'package:pinch_zoom_image_updated/pinch_zoom_image_updated.dart';
 
 class CreateNewList extends StatefulWidget {
   @override
@@ -302,7 +304,15 @@ class _CreateNewListState extends State<CreateNewList> {
                         borderRadius: BorderRadius.circular(5),
                         border: Border.all(color: Colors.black)),
                     child: e.camera == true
-                        ? Image.file(File(e.path.text))
+                        ? InkWell(
+                            onTap: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) =>
+                                    Image.file(File(e.path.text)),
+                              ));
+                            },
+                            child: PinchZoomImage(
+                                image: Image.file(File(e.path.text))))
                         : TextField(
                             controller: e.path,
                             decoration:

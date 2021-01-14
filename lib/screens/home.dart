@@ -5,6 +5,8 @@ import 'package:anythings/screens/recievedlist.dart';
 import 'package:anythings/screens/recievedscreen.dart';
 import 'package:anythings/screens/sharedDetails.dart';
 import 'package:anythings/screens/uploadnewlist.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:share/share.dart';
 import 'package:flutter/material.dart';
 import 'package:anythings/screens/sharescreen.dart';
 import 'oldlist.dart';
@@ -431,16 +433,22 @@ class _HomeState extends State<Home> {
                                   ),
                                 ),
                               ),
-                              Container(
-                                height: 40,
-                                width: 25,
-                                child: Icon(
-                                  Icons.camera_alt,
-                                  color: Colors.white,
+                              InkWell(
+                                onTap: () async {
+                                  await ImagePicker.pickImage(
+                                      source: ImageSource.gallery);
+                                },
+                                child: Container(
+                                  height: 40,
+                                  width: 25,
+                                  child: Icon(
+                                    Icons.camera_alt,
+                                    color: Colors.white,
+                                  ),
+                                  decoration: BoxDecoration(
+                                      border: Border.all(
+                                          color: Colors.white, width: 0.5)),
                                 ),
-                                decoration: BoxDecoration(
-                                    border: Border.all(
-                                        color: Colors.white, width: 0.5)),
                               ),
                             ],
                           ),
@@ -549,8 +557,10 @@ Widget tile(context) {
                     ),
                     ListTile(
                       title: Text("Shared Details"),
-                      trailing: Icon(Icons.share_rounded),
-                      onTap: () {},
+                      trailing: Icon(Icons.share_sharp),
+                      onTap: () {
+                        Share.share('check out my website https://example.com');
+                      },
                     ),
                     // ListTile(
                     //   title: Text("Details"),
@@ -576,7 +586,34 @@ Widget tile(context) {
                     ListTile(
                       title: Text("Delete"),
                       trailing: Icon(Icons.delete),
-                      onTap: () {},
+                      onTap: () {
+                        showDialog(
+                            context: context,
+                            builder: (context) => Dialog(
+                                    child: Container(
+                                  width: 200,
+                                  color: Colors.white,
+                                  height: 200,
+                                  child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          FlatButton(
+                                              onPressed: () {},
+                                              child: Text("Yes")),
+                                          FlatButton(
+                                              onPressed: () {},
+                                              child: Text("No")),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                )));
+                      },
                     ),
                     ListTile(
                       title: Text("Properties"),

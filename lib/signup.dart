@@ -49,24 +49,17 @@ class _SignupState extends State<Signup> {
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: TextField(
-                        obscureText: true,
+                      child: TextFormField(
+                        // validator: (value) {
+                        //   print(value);
+                        //   if (value.length > 10) {
+                        //     return "Invalid Number";
+                        //   }
+                        //   return "";
+                        // },
+                        keyboardType: TextInputType.number,
                         decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            hintText: "Enter Password",
-                            prefixIcon: Icon(
-                              Icons.lock,
-                              color: Colors.lightBlue,
-                            )),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: TextField(
-                        decoration: InputDecoration(
+                            errorText: "Invalid Number",
                             border: OutlineInputBorder(),
                             hintText: "Enter Your Mobile Number",
                             prefixIcon: Icon(
@@ -87,6 +80,40 @@ class _SignupState extends State<Signup> {
                             hintText: "Enter Your Email Address",
                             prefixIcon: Icon(
                               Icons.email,
+                              color: Colors.lightBlue,
+                            )),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: TextField(
+                        obscureText: true,
+                        decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            hintText: "Enter Password",
+                            suffixIcon: Icon(Icons.remove_red_eye),
+                            prefixIcon: Icon(
+                              Icons.lock,
+                              color: Colors.lightBlue,
+                            )),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: TextField(
+                        obscureText: true,
+                        decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            hintText: "Confirm Password",
+                            suffixIcon: Icon(Icons.remove_red_eye),
+                            prefixIcon: Icon(
+                              Icons.lock,
                               color: Colors.lightBlue,
                             )),
                       ),

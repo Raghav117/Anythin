@@ -49,6 +49,7 @@ class _SigninState extends State<Signin> {
                           obscureText: true,
                           decoration: InputDecoration(
                               border: OutlineInputBorder(),
+                              suffixIcon: Icon(Icons.remove_red_eye),
                               hintText: "Enter Password",
                               prefixIcon: Icon(
                                 Icons.lock,
