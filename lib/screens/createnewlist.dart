@@ -307,8 +307,21 @@ class _CreateNewListState extends State<CreateNewList> {
                         ? InkWell(
                             onTap: () {
                               Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) =>
-                                    Image.file(File(e.path.text)),
+                                builder: (context) => Scaffold(
+                                  backgroundColor: Colors.black,
+                                  body: SafeArea(
+                                    child: Column(
+                                      children: [
+                                        IconButton(
+                                            color: Colors.white,
+                                            icon: Icon(Icons.arrow_back),
+                                            onPressed: () =>
+                                                Navigator.pop(context)),
+                                        Image.file(File(e.path.text)),
+                                      ],
+                                    ),
+                                  ),
+                                ),
                               ));
                             },
                             child: PinchZoomImage(
