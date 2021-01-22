@@ -1,6 +1,8 @@
 import 'package:anythings/screens/contact_screen.dart';
 import 'package:anythings/screens/createnewlist.dart';
+import 'package:anythings/screens/oldvehicle.dart';
 import 'package:anythings/screens/options.dart';
+import 'package:anythings/screens/profile.dart';
 import 'package:anythings/screens/recievedlist.dart';
 import 'package:anythings/screens/recievedscreen.dart';
 import 'package:anythings/screens/sharedDetails.dart';
@@ -9,6 +11,8 @@ import 'package:image_picker/image_picker.dart';
 import 'package:share/share.dart';
 import 'package:flutter/material.dart';
 import 'package:anythings/screens/sharescreen.dart';
+import 'enquiry.dart';
+import 'mechanic.dart';
 import 'oldlist.dart';
 import 'settings.dart';
 
@@ -141,6 +145,98 @@ class _HomeState extends State<Home> {
                             width: double.infinity,
                             child: Text(
                               "Settings",
+                              style: TextStyle(color: Colors.black),
+                            ),
+                          )),
+                      MaterialButton(
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) {
+                                return Enquiry();
+                              },
+                            ));
+                          },
+                          splashColor: Colors.lightBlueAccent,
+                          hoverColor: Colors.lightBlueAccent,
+                          highlightColor: Colors.lightBlueAccent,
+                          shape: RoundedRectangleBorder(
+
+                              // borderRadius: BorderRadius.circular(20),
+                              // side: BorderSide(color: Colors.white, width: 0.5)
+                              ),
+                          child: Container(
+                            width: double.infinity,
+                            child: Text(
+                              "Enquiry",
+                              style: TextStyle(color: Colors.black),
+                            ),
+                          )),
+                      MaterialButton(
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) {
+                                return Profile();
+                              },
+                            ));
+                          },
+                          splashColor: Colors.lightBlueAccent,
+                          hoverColor: Colors.lightBlueAccent,
+                          highlightColor: Colors.lightBlueAccent,
+                          shape: RoundedRectangleBorder(
+
+                              // borderRadius: BorderRadius.circular(20),
+                              // side: BorderSide(color: Colors.white, width: 0.5)
+                              ),
+                          child: Container(
+                            width: double.infinity,
+                            child: Text(
+                              "Profile",
+                              style: TextStyle(color: Colors.black),
+                            ),
+                          )),
+                      MaterialButton(
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) {
+                                return Mechanic();
+                              },
+                            ));
+                          },
+                          splashColor: Colors.lightBlueAccent,
+                          hoverColor: Colors.lightBlueAccent,
+                          highlightColor: Colors.lightBlueAccent,
+                          shape: RoundedRectangleBorder(
+
+                              // borderRadius: BorderRadius.circular(20),
+                              // side: BorderSide(color: Colors.white, width: 0.5)
+                              ),
+                          child: Container(
+                            width: double.infinity,
+                            child: Text(
+                              "Mechanic",
+                              style: TextStyle(color: Colors.black),
+                            ),
+                          )),
+                      MaterialButton(
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) {
+                                return OldVehicle();
+                              },
+                            ));
+                          },
+                          splashColor: Colors.lightBlueAccent,
+                          hoverColor: Colors.lightBlueAccent,
+                          highlightColor: Colors.lightBlueAccent,
+                          shape: RoundedRectangleBorder(
+
+                              // borderRadius: BorderRadius.circular(20),
+                              // side: BorderSide(color: Colors.white, width: 0.5)
+                              ),
+                          child: Container(
+                            width: double.infinity,
+                            child: Text(
+                              "Old Vehicle",
                               style: TextStyle(color: Colors.black),
                             ),
                           )),

@@ -1,4 +1,0 @@
-#Sun Jan 17 18:14:05 IST 2021
-base.0=C\:\\Users\\RaghavG1999\\Desktop\\Anythin\\build\\app\\intermediates\\transforms\\r8\\release\\0\\classes.dex
-path.0=classes.dex
-renamed.0=classes.dex
